@@ -13,7 +13,8 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
 endif()
 
-qt_add_executable(JCalendarApp src/main.cpp)
+qt_add_executable(JCalendarApp src/main.cpp
+    src/qjcalendar.h src/qjcalendar.cpp)
 
 qt_add_resources(JCalendarApp "configuration"
     PREFIX "/"
