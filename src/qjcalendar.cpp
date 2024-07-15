@@ -46,6 +46,37 @@ bool QJCalendar::isLeap(int year)
     return false;
 }
 
+bool QJCalendar::isValid(int jalaliYear, int jalaliMonth, int jalaliDay)
+{
+    if (jalaliMonth <= 6 && jalaliDay > 0 && jalaliDay <= 31) {
+        return true;
+    }
+
+    if ((jalaliMonth > 6 && jalaliMonth <= 11) && (jalaliDay > 0 && jalaliDay <= 30)) {
+        return true;
+    }
+
+    if (jalaliMonth == 12) {
+        if ((jalaliDay > 0 && jalaliDay <= 30) || (isLeap(jalaliYear) && jalaliDay == 30))
+            return true;
+    }
+
+    return false;
+}
+
+bool QJCalendar::isValid(QString jalaliDate)
+{
+    QStringList date = jalaliDate.split("/");
+    if (date.size() != 3)
+        return false;
+
+    int y = date[0].toInt();
+    int m = date[1].toInt();
+    int d = date[2].toInt();
+
+    return isValid(y, m, d);
+}
+
 QString QJCalendar::convertToJalali(int gregorianYear, int gregorianMonth, int gregorianDay)
 {
     return convertToJalali(QDate(gregorianYear, gregorianMonth, gregorianDay));

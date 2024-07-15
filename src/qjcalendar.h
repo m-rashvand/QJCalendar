@@ -10,6 +10,8 @@ public:
     QJCalendar();
     Q_INVOKABLE int subDate(QString dateStr, int year, int month, int day);
     Q_INVOKABLE bool isLeap(int year);
+    Q_INVOKABLE bool isValid(int jalaliYear, int jalaliMonth, int jalaliDay);
+    Q_INVOKABLE bool isValid(QString jalaliDate);
 
     // gregorian to jalali
     Q_INVOKABLE QString convertToJalali(int gregorianYear, int gregorianMonth, int gregorianDay);
