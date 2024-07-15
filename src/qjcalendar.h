@@ -13,10 +13,13 @@ public:
 
     // gregorian to jalali
     Q_INVOKABLE QString convertToJalali(int gregorianYear, int gregorianMonth, int gregorianDay);
+    QString convertToJalali(QString dateStr);
     Q_INVOKABLE static QString convertToJalali(QDate date);
 
     // jalali to gregorian
+    QString convertToGregorianStr(QString dateStr);
     Q_INVOKABLE QString convertToGregorianStr(int jalaliYear, int jalaliMonth, int jalaliDay);
+    QDate convertToGregorian(int jalaliYear, int jalaliMonth, int jalaliDay);
     Q_INVOKABLE static QDate convertToGregorian(QString dateStr);
 
 private:
