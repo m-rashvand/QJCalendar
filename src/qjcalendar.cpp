@@ -27,17 +27,7 @@ int QJCalendar::subDate(QString dateStr, int year, int month, int day)
 
 bool QJCalendar::isLeap(int year)
 {
-    if (year < 1178 || year > 1634) { // approximate (inaccurate) way to determine the leap year
-        double num = (year + 2346) * (0.24219858156);
-        double fraction = num - static_cast<int>(num);
-
-        if (fraction < 0.24219858156) {
-            return true;
-        }
-        return false;
-    }
-
-    // following alghorithm determines the leap year correctly, for the years between 1178 to 1634.
+    // following alghorithm determines the leap year accurately, for the years between 1178 to 1634.
     if (year % 33 == 1 or year % 33 == 5 or year % 33 == 9 or year % 33 == 13 or year % 33 == 17
         or year % 33 == 22 or year % 33 == 26 or year % 33 == 30) {
         return true;

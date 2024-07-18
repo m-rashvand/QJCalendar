@@ -7,14 +7,15 @@ project(JCalendarApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt6 6.2 REQUIRED COMPONENTS Core Widgets Gui Qml Quick)
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
 endif()
 
 qt_add_executable(JCalendarApp src/main.cpp
-    src/qjcalendar.h src/qjcalendar.cpp)
+    src/qjcalendar.h src/qjcalendar.cpp
+    src/DatePicker/jdatepickerwidget.h src/DatePicker/jdatepickerwidget.cpp)
 
 qt_add_resources(JCalendarApp "configuration"
     PREFIX "/"
@@ -22,8 +23,23 @@ qt_add_resources(JCalendarApp "configuration"
         qtquickcontrols2.conf
 )
 
+qt_add_resources(JCalendarApp "styling"
+    PREFIX "/"
+    FILES
+        src/DatePicker/styles.qss
+)
+
+qt_add_resources(JCalendarApp "app_images"
+    PREFIX "/"
+    FILES
+        images/down.png
+        images/up.png
+)
+
+
 target_link_libraries(JCalendarApp PRIVATE
     Qt6::Core
+    Qt6::Widgets
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick

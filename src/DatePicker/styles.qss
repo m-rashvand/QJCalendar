@@ -1,0 +1,122 @@
+/*-----QWidget-----*/
+QWidget
+{
+    background-color: #eee;
+}
+
+
+
+/*-----QLabel-----*/
+QLabel {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QLabel#weekend {
+    background-color: #fe4545;
+    border-radius: 4px;
+}
+
+
+
+/*-------QPushButton-------*/
+.QPushButton {
+    color: #4c4c4c;
+    background: #fff;
+    min-width: 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+    margin: 3px;
+}
+
+.QPushButton:hover{
+    border: 1px solid #2c5ca5;
+}
+
+QPushButton:checked {
+    border: 3px solid #aaa;
+}
+
+.QPushButton:pressed {
+    background: #16202f;
+}
+
+
+
+/*-------QComboBox-------*/
+QComboBox {
+    border: 1px solid #212d40;
+    background: #fdfdfd;
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 10px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 22px;
+    border-left: 1px solid darkgray;
+}
+
+QComboBox::down-arrow {
+    image: url(:/images/down.png);
+    width: 24px;
+}
+
+QComboBox::down-arrow:on {
+    image: url(:/images/up.png);
+}
+
+
+
+/*-------QSpinBox-------*/
+QSpinBox {
+    border: 1px solid #212d40;
+    background: #fdfdfd;
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 10px;
+}
+
+QSpinBox::up-button {
+    margin-left: 3px;
+    image: url(:/images/up.png);
+    border: none;
+    width: 12px;
+}
+
+QSpinBox::down-button {
+    margin-left: 3px;
+    image: url(:/images/down.png);
+    border: none;
+    width: 12px;
+}
+
+
+
+/*-------QScrollBar-------*/
+QScrollBar:vertical {
+    border: none;
+    background: #fff;
+    width: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: #7d7d7d;
+    border-radius: 2px;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #fff;
+    height: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #7d7d7d;
+    border-radius: 2px;
+}
